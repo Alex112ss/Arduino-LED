@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>註冊</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        form {
+            max-width: 400px;
+            margin-left: 0 auto;
+            padding: 20px;
+        }
+
+        @media (max-width: 600px) {
+            form {
+                max-width: 100%;
+            }
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>註冊</h1>
+
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+
+    <form action="/register" method="post">
+        <label for="username">帳號:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">密碼:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <input type="submit" value="註冊">
+    </form>
+
+    <p>已有帳號？<a href="/login">登入</a></p>
+</body>
+</html>

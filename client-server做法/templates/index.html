@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LED 控制</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 10px;
+            padding: 10px;
+            text-align: left;
+        }
+
+        p {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#btn-on").click(function () {
+                $.get("/led/on");
+            });
+
+            $("#btn-off").click(function () {
+                $.get("/led/off");
+            });
+
+            $("#btn-brightness-up").click(function () {
+                $.get("/led/brightness/up");
+            });
+
+            $("#btn-brightness-down").click(function () {
+                $.get("/led/brightness/down");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>LED 控制</h1>
+    <button id="btn-on">Turn On LED</button>
+    <button id="btn-off">Turn Off LED</button>
+    <button id="btn-brightness-up">Increase Brightness</button>
+    <button id="btn-brightness-down">Decrease Brightness</button>
+    {% if username %}
+    <p>當前帳號: {{ username }}</p>
+    <a href="/logout">登出</a>
+    {% else %}
+    <p>請先登入</p>
+    <a href="/login">登入</a>
+    {% endif %}
+</body>
+</html>
