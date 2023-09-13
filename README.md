@@ -7,3 +7,6 @@ ESP8266網頁伺服器 https://youtu.be/w0Xon6DOwxM
 Android App https://youtu.be/nqYvWGcNEFU
 
 手勢控制 https://youtu.be/lAm3lJyh8Ck?si=X89BrLjWhDU6ro9O
+
+
+需先在本機電腦架設好資料庫(mysql)
